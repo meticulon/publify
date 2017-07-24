@@ -1,7 +1,7 @@
-plugins_root = File.join(::Rails.root.to_s, "lib")
-separator = plugins_root.include?("/") ? "/" : "\\"
+require 'sidebar_registry'
 
-Dir.glob(File.join(plugins_root, "*_sidebar")).select do |file|
-  plugin_name = file.split(separator).last
-  require File.join(plugin_name, "lib", plugin_name)
-end
+SidebarRegistry.register_sidebar('AuthorsSidebar')
+SidebarRegistry.register_sidebar('LivesearchSidebar')
+SidebarRegistry.register_sidebar('NotesSidebar')
+SidebarRegistry.register_sidebar('PopularSidebar')
+SidebarRegistry.register_sidebar('XmlSidebar')

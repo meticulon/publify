@@ -1,5 +1,5 @@
-desc "Force a sweeping run of publify's static page caches (all of them!)"
-task :genethumb => :environment do
+desc 'Force thumbnail creation for each resources'
+task genethumb: :environment do
   require 'resource'
   r = Resource.find(:all)
   r.each do |res|

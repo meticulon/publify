@@ -1,0 +1,123 @@
+# Default style guide 'https://github.com/bbatsov/ruby-style-guide'.
+
+AllCops:
+  Exclude:
+  - 'bin/**/*'
+  - 'config/**/*'
+  - 'tmp/**/*'
+  - 'publify_core/bin/*'
+  - 'publify_core/spec/dummy/**/*'
+  - 'publify_amazon_sidebar/bin/*'
+  - 'publify_amazon_sidebar/spec/dummy/**/*'
+  - 'publify_textfilter_code/bin/*'
+  - 'publify_textfilter_code/spec/dummy/**/*'
+  - 'db/schema.rb'
+  TargetRubyVersion: '2.2'
+
+Rails:
+  Enabled: true
+
+# We have duplication due to extra logic in the Gemfile
+Bundler/DuplicatedGem:
+  Enabled: false
+
+# Place . on the previous line
+Layout/DotPosition:
+  EnforcedStyle: trailing
+
+# Do not use unnecessary spacing.
+Layout/ExtraSpacing:
+  Enabled: true
+
+Layout/MultilineMethodCallBraceLayout:
+  EnforcedStyle: same_line
+
+# Multi-line operations should be simply indented. Aligning them makes it even
+# harder to keep a sane line length.
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+# Multi-line operations should be simply indented. Aligning them makes it even
+# harder to keep a sane line length.
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+# Assume the programmer knows how bracketed block syntax works
+Lint/AmbiguousBlockAssociation:
+  Enabled: false
+
+# Allow if (foo = get_foo) style
+Lint/AssignmentInCondition:
+  AllowSafeAssignment: true
+
+# Spec describe blocks can be any length
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+    - 'publify_core/spec/**/*'
+    - 'publify_amazon_sidebar/spec/**/*'
+    - 'publify_textfilter_code/spec/**/*'
+
+# Do not require long paths to be split by comma's.
+Rails/FilePath:
+  Enabled: false
+
+# Documenting all classes is not common in Rails projects.
+Style/Documentation:
+  Enabled: false
+
+# Provides more information, while still being displayable in modern wide-screen.
+Metrics/LineLength:
+  Max: 100
+
+# Allow the use of 'and' 'or' in control structures.
+Style/AndOr:
+  EnforcedStyle: conditionals
+
+# Allow multiple Hash parameters to look similar
+Style/BracesAroundHashParameters:
+  EnforcedStyle: context_dependent
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/CollectionMethods:
+  Enabled: true
+
+# This cop doesn't detect use of break yet
+Style/EachWithObject:
+  Enabled: false
+
+# Allows format strings with: format, sprintf or percent.
+Style/FormatString:
+  Enabled: false
+
+# TODO: Re-enable?
+Style/NumericPredicate:
+  Enabled: false
+
+# Not all objects that implement #size implement #empty?
+Style/ZeroLengthPredicate:
+  Enabled: false
+
+# Restore previous RuboCop defaults
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%W': ()
+    '%w': ()
+
+# Always use raise to raise exceptions
+Style/SignalException:
+  EnforcedStyle: only_raise
+
+# Allow meaningful names for single-line reduce etc.
+Style/SingleLineBlockParams:
+  Enabled: false
+
+# Prefer symbols to look like symbols
+Style/SymbolArray:
+  EnforcedStyle: brackets
+
+# Allow small arrays of words with quotes
+Style/WordArray:
+  MinSize: 4
